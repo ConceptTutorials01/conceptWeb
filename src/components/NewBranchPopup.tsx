@@ -52,11 +52,11 @@ const NewBranchPopup = () => {
             🎉 Grand New Centre Launch
           </div>
 
-          <h2 className="text-3xl font-extrabold leading-tight mb-1">
-            We're Expanding! 🚀
+          <h2 className="text-3xl font-bold leading-tight mb-1">
+            Three Decades of Excellence, Now Expanding Across Indore! 
           </h2>
           <p className="text-white/80 text-sm mt-1">
-            30 Years of Excellence — Now at a New Location
+            Announcing Our Newest Location!
           </p>
         </div>
 
@@ -65,7 +65,7 @@ const NewBranchPopup = () => {
           {/* Institute name */}
           <div className="text-center mb-4">
             <p className="text-muted-foreground text-sm font-medium uppercase tracking-widest">
-              Concept Tutorials
+              <b>Concept Tutorials </b>          
             </p>
             <h3 className="text-xl font-bold text-foreground mt-1">
               New Branch Now Open at
