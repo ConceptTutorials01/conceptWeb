@@ -1,14 +1,31 @@
+Sitemap: https://conceptutorials.com/sitemap.xml
+
+User-agent: *
+Allow: /
+
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
 Allow: /
 
-User-agent: Twitterbot
+User-agent: GPTBot
 Allow: /
 
-User-agent: facebookexternalhit
+User-agent: OAI-SearchBot
 Allow: /
 
-User-agent: *
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Bytespider
 Allow: /
