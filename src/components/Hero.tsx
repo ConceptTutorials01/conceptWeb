@@ -88,7 +88,7 @@ const Hero = () => {
           </div>
           <div className="glass-card rounded-2xl p-6 group hover:border-secondary/40 transition-all duration-500">
             <div className="text-4xl md:text-5xl font-black font-display gradient-text-gold mb-2">
-              <AnimatedCounter end={25} suffix="+" />
+              <AnimatedCounter end={30} suffix="+" />
             </div>
             <p className="text-muted-foreground text-sm font-medium tracking-wide uppercase">Years Experience</p>
           </div>
