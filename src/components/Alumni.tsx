@@ -158,7 +158,7 @@ const Alumni = () => {
 
         {/* Swiper Slider */}
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-             style={{ transitionDelay: '200ms' }}>
+          style={{ transitionDelay: '200ms' }}>
           <Swiper
             modules={[Pagination, Autoplay]}
             spaceBetween={24}
@@ -216,7 +216,7 @@ const Alumni = () => {
 
         {/* Join Legacy Section */}
         <div className={`mt-20 relative rounded-2xl overflow-hidden transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-             style={{ transitionDelay: '400ms' }}>
+          style={{ transitionDelay: '400ms' }}>
           {/* Background */}
           <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-secondary/5 to-primary/10" />
           <div className="absolute inset-0 glass" />
@@ -241,7 +241,7 @@ const Alumni = () => {
               </span>
               <span className="inline-flex items-center gap-2 bg-primary/15 border border-primary/20 text-primary px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary/25 transition-colors duration-300 cursor-default">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                25+ Years Legacy
+                30+ Years Legacy
               </span>
             </div>
           </div>
