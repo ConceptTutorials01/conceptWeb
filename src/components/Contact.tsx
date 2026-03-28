@@ -159,8 +159,7 @@ const Contact = () => {
                 <div className="flex items-start gap-3">
                   <Clock className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                   <div className="text-muted-foreground space-y-0.5">
-                    <p>Morning: 6AM – 12PM</p>
-                    <p>Evening: 2PM – 8PM</p>
+                    <p>12PM – 8PM</p>
                     <p>Test Series: Sundays</p>
                   </div>
                 </div>
