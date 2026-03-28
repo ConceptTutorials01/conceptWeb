@@ -88,7 +88,6 @@ const Contact = () => {
                   <Phone className="w-4 h-4 text-secondary mt-0.5 flex-shrink-0" />
                   <div className="text-muted-foreground space-y-0.5">
                     <p><span className="font-medium text-foreground">Parag Kher:</span> 93003 60180</p>
-                    <p><span className="font-medium text-foreground">Achal Agrawal:</span> 97526 76676</p>
                     <p><span className="font-medium text-foreground">Sachin Agrawal:</span> 99608 39401</p>
                     <p>0731 3582568</p>
                   </div>
