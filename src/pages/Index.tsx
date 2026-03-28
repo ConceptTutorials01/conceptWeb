@@ -8,18 +8,27 @@ import Facilities from "@/components/Facilities";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import NewBranchPopup from "@/components/NewBranchPopup";
+import MouseBackground from "@/components/MouseBackground";
 
 const Index = () => {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-background relative">
+      {/* Interactive Mouse Background */}
+      <MouseBackground />
+      
+      {/* Popup */}
       <NewBranchPopup />
-      <Header />
-      <Hero />
-      <About />
-      <Alumni />
-      <Facilities />
-      <Contact />
-      <Footer />
+      
+      {/* Content */}
+      <div className="relative z-10">
+        <Header />
+        <Hero />
+        <About />
+        <Alumni />
+        <Facilities />
+        <Contact />
+        <Footer />
+      </div>
     </main>
   );
 };

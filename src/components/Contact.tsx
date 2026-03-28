@@ -3,12 +3,14 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Phone, Mail, Clock, Building2, Sparkles } from "lucide-react";
 import { useState } from "react";
 import emailjs from "emailjs-com";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const Contact = () => {
+  const { ref: sectionRef, isVisible } = useScrollReveal(0.05);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -50,33 +52,48 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4 text-foreground">Get in Touch</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+    <section id="contact" className="relative py-24 overflow-hidden">
+      {/* Section Divider */}
+      <div className="section-divider mb-24" />
+
+      <div ref={sectionRef} className="max-w-6xl mx-auto px-6">
+        {/* Section Header */}
+        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="section-badge mx-auto">
+            <Mail className="w-3.5 h-3.5" />
+            Contact Us
+          </div>
+          <h2 className="text-4xl md:text-5xl font-black font-display mb-5">
+            <span className="text-foreground">Get in </span>
+            <span className="gradient-text">Touch</span>
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Ready to start your IIT JEE journey? Contact us today for admission details,
             course information, or to schedule a campus visit.
           </p>
         </div>
 
         {/* ── Two Branch Cards ── */}
-        <div className="grid md:grid-cols-2 gap-6 mb-14">
+        <div className={`grid md:grid-cols-2 gap-6 mb-14 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+             style={{ transitionDelay: '200ms' }}>
 
           {/* Head Office */}
-          <Card className="border border-border shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <CardContent className="p-6">
-              <div className="flex items-center gap-3 mb-5">
-                <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+          <div className="glass-card rounded-2xl p-7 relative overflow-hidden group">
+            {/* Hover glow */}
+            <div className="absolute -top-16 -left-16 w-48 h-48 bg-primary/10 rounded-full blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+
+            <div className="relative z-10">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-11 h-11 bg-gradient-to-br from-primary/20 to-primary/5 rounded-xl flex items-center justify-center ring-1 ring-primary/20">
                   <Building2 className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <span className="text-xs font-semibold uppercase tracking-widest text-primary">Head Office</span>
+                  <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-primary">Head Office</span>
                   <h3 className="text-lg font-bold text-foreground leading-tight">Lokmanya Nagar Centre</h3>
                 </div>
               </div>
 
-              <div className="space-y-3 text-sm">
+              <div className="space-y-4 text-sm">
                 <div className="flex items-start gap-3">
                   <MapPin className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                   <div className="text-muted-foreground">
@@ -106,36 +123,44 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="mt-5 flex gap-2">
-                <Button variant="outline" size="sm" className="flex-1 text-xs"
+              <div className="mt-6 flex gap-3">
+                <Button variant="outline" size="sm" className="flex-1 text-xs border-primary/20 text-primary hover:bg-primary/10 hover:border-primary/40 transition-all duration-300"
                   onClick={() => window.open('tel:+919300360180', '_self')}>
                   Call Now
                 </Button>
-                <Button variant="outline" size="sm" className="flex-1 text-xs"
+                <Button variant="outline" size="sm" className="flex-1 text-xs border-primary/20 text-primary hover:bg-primary/10 hover:border-primary/40 transition-all duration-300"
                   onClick={() => window.open('https://wa.me/919300360180', '_blank')}>
                   WhatsApp
                 </Button>
               </div>
-            </CardContent>
-          </Card>
+            </div>
+
+            {/* Bottom accent */}
+            <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          </div>
 
           {/* New Branch */}
-          <Card className="border-2 border-secondary shadow-lg hover:shadow-xl transition-shadow duration-300 relative overflow-hidden">
-            <div className="absolute top-3 right-3 flex items-center gap-1 bg-secondary text-secondary-foreground text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">
+          <div className="glass-card rounded-2xl p-7 relative overflow-hidden group border-secondary/20 hover:border-secondary/40">
+            {/* New badge */}
+            <div className="absolute top-4 right-4 flex items-center gap-1 bg-gradient-to-r from-secondary to-amber-400 text-black text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wide shadow-lg shadow-secondary/20 z-20">
               <Sparkles className="w-3 h-3" /> New Branch
             </div>
-            <CardContent className="p-6">
-              <div className="flex items-center gap-3 mb-5">
-                <div className="w-10 h-10 bg-secondary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+
+            {/* Hover glow */}
+            <div className="absolute -top-16 -right-16 w-48 h-48 bg-secondary/10 rounded-full blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+
+            <div className="relative z-10">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-11 h-11 bg-gradient-to-br from-secondary/20 to-secondary/5 rounded-xl flex items-center justify-center ring-1 ring-secondary/20">
                   <Building2 className="w-5 h-5 text-secondary" />
                 </div>
                 <div>
-                  <span className="text-xs font-semibold uppercase tracking-widest text-secondary">New Centre</span>
+                  <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-secondary">New Centre</span>
                   <h3 className="text-lg font-bold text-foreground leading-tight">Vidhyanchal Nagar Centre</h3>
                 </div>
               </div>
 
-              <div className="space-y-3 text-sm">
+              <div className="space-y-4 text-sm">
                 <div className="flex items-start gap-3">
                   <MapPin className="w-4 h-4 text-secondary mt-0.5 flex-shrink-0" />
                   <div className="text-muted-foreground">
@@ -165,56 +190,69 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="mt-5 flex gap-2">
+              <div className="mt-6 flex gap-3">
                 <Button variant="outline" size="sm"
-                  className="flex-1 text-xs border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground"
+                  className="flex-1 text-xs border-secondary/20 text-secondary hover:bg-secondary/10 hover:border-secondary/40 transition-all duration-300"
                   onClick={() => window.open('tel:+919752676676', '_self')}>
                   Call Now
                 </Button>
                 <Button variant="outline" size="sm"
-                  className="flex-1 text-xs border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground"
+                  className="flex-1 text-xs border-secondary/20 text-secondary hover:bg-secondary/10 hover:border-secondary/40 transition-all duration-300"
                   onClick={() => window.open('https://wa.me/919752676676', '_blank')}>
                   WhatsApp
                 </Button>
               </div>
-            </CardContent>
-          </Card>
+            </div>
+
+            {/* Bottom accent */}
+            <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-secondary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          </div>
         </div>
 
         {/* ── Inquiry Form + Quick Actions ── */}
-        <div className="grid lg:grid-cols-2 gap-12">
-          <Card className="border border-border shadow-lg">
-            <CardHeader>
-              <CardTitle className="text-2xl text-foreground">Admission Inquiry Form</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
+        <div className={`grid lg:grid-cols-2 gap-10 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+             style={{ transitionDelay: '400ms' }}>
+
+          {/* Form */}
+          <div className="glass-card rounded-2xl overflow-hidden">
+            <div className="p-8">
+              <h3 className="text-2xl font-bold font-display text-foreground mb-6 flex items-center gap-3">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center ring-1 ring-primary/20">
+                  <Mail className="w-5 h-5 text-primary" />
+                </div>
+                Admission Inquiry Form
+              </h3>
+
+              <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <Label htmlFor="name">Full Name *</Label>
+                    <Label htmlFor="name" className="text-sm text-muted-foreground mb-1.5 block">Full Name *</Label>
                     <Input id="name" name="name" type="text" placeholder="Enter your full name"
-                      value={formData.name} onChange={handleInputChange} required className="mt-1" />
+                      value={formData.name} onChange={handleInputChange} required
+                      className="bg-muted/50 border-border/50 focus:border-primary/50 text-foreground placeholder:text-muted-foreground/50 rounded-xl" />
                   </div>
                   <div>
-                    <Label htmlFor="email">Email Address *</Label>
+                    <Label htmlFor="email" className="text-sm text-muted-foreground mb-1.5 block">Email Address *</Label>
                     <Input id="email" name="email" type="email" placeholder="Enter your email"
-                      value={formData.email} onChange={handleInputChange} required className="mt-1" />
+                      value={formData.email} onChange={handleInputChange} required
+                      className="bg-muted/50 border-border/50 focus:border-primary/50 text-foreground placeholder:text-muted-foreground/50 rounded-xl" />
                   </div>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <Label htmlFor="phone">Phone Number *</Label>
+                    <Label htmlFor="phone" className="text-sm text-muted-foreground mb-1.5 block">Phone Number *</Label>
                     <Input id="phone" name="phone" type="tel" placeholder="Enter your phone number"
-                      value={formData.phone} onChange={handleInputChange} required className="mt-1" />
+                      value={formData.phone} onChange={handleInputChange} required
+                      className="bg-muted/50 border-border/50 focus:border-primary/50 text-foreground placeholder:text-muted-foreground/50 rounded-xl" />
                   </div>
                   <div>
-                    <Label htmlFor="class">Current Class</Label>
+                    <Label htmlFor="class" className="text-sm text-muted-foreground mb-1.5 block">Current Class</Label>
                     <Select onValueChange={handleSelectChange} value={formData.class}>
-                      <SelectTrigger className="mt-1">
+                      <SelectTrigger className="bg-muted/50 border-border/50 focus:border-primary/50 text-foreground rounded-xl">
                         <SelectValue placeholder="Select your class" />
                       </SelectTrigger>
-                      <SelectContent>
+                      <SelectContent className="bg-card border-border">
                         <SelectItem value="8">Class 8th</SelectItem>
                         <SelectItem value="9">Class 9th</SelectItem>
                         <SelectItem value="10">Class 10th</SelectItem>
@@ -228,65 +266,80 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <Label htmlFor="message">Message</Label>
+                  <Label htmlFor="message" className="text-sm text-muted-foreground mb-1.5 block">Message</Label>
                   <Textarea id="message" name="message"
                     placeholder="Tell us about your goals, questions, or any specific requirements..."
-                    value={formData.message} onChange={handleInputChange} rows={4} className="mt-1" />
+                    value={formData.message} onChange={handleInputChange} rows={4}
+                    className="bg-muted/50 border-border/50 focus:border-primary/50 text-foreground placeholder:text-muted-foreground/50 rounded-xl resize-none" />
                 </div>
 
-                <Button type="submit" variant="cta" className="w-full">Submit Inquiry</Button>
+                <Button type="submit"
+                  className="w-full bg-gradient-to-r from-primary to-blue-500 hover:from-primary/90 hover:to-blue-500/90 text-white font-bold py-3 rounded-xl shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:scale-[1.02] transition-all duration-300">
+                  Submit Inquiry
+                </Button>
 
-                <Button type="button" variant="outline" className="w-full"
+                <Button type="button" variant="outline"
+                  className="w-full border-primary/20 text-primary hover:bg-primary/10 hover:border-primary/40 rounded-xl transition-all duration-300"
                   onClick={() => window.open("https://forms.cloud.microsoft/r/jTewtkzjqk", "_blank")}>
                   Admission Form
                 </Button>
 
-                <Button type="button" variant="outline" className="w-full"
+                <Button type="button" variant="outline"
+                  className="w-full border-border/50 text-muted-foreground hover:bg-muted/50 hover:text-foreground rounded-xl transition-all duration-300"
                   onClick={() => window.open("#", "_blank")}>
                   Watch Demo Lectures
                 </Button>
               </form>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
 
           {/* Quick Actions */}
           <div className="space-y-6 flex flex-col justify-center">
-            <Card className="bg-gradient-to-r from-primary to-secondary text-white border-0 shadow-lg">
-              <CardContent className="p-6 text-center">
-                <h3 className="text-xl font-semibold mb-1">Need Immediate Assistance?</h3>
-                <p className="text-sm opacity-80 mb-4">Available Mon–Sat, 8AM to 8PM</p>
+            {/* Immediate Assistance */}
+            <div className="relative rounded-2xl overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary via-blue-600 to-primary bg-[length:200%_100%] animate-gradient-shift" />
+              <div className="relative z-10 p-8 text-center text-white">
+                <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center ring-1 ring-white/20">
+                  <Phone className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold mb-1">Need Immediate Assistance?</h3>
+                <p className="text-sm opacity-80 mb-5">Available Mon–Sat, 8AM to 8PM</p>
                 <div className="space-y-3">
-                  <Button variant="outline" className="w-full bg-white text-primary border-white hover:bg-opacity-90"
+                  <Button variant="outline" className="w-full bg-white text-primary border-white hover:bg-white/90 font-bold rounded-xl"
                     onClick={() => window.open('tel:+919300360180', '_self')}>
                     Call: +91 93003 60180
                   </Button>
-                  <Button variant="outline" className="w-full bg-transparent border-white text-white hover:bg-white hover:text-primary"
+                  <Button variant="outline" className="w-full bg-transparent border-white/30 text-white hover:bg-white hover:text-primary font-semibold rounded-xl backdrop-blur-sm"
                     onClick={() => window.open('https://wa.me/919300360180', '_blank')}>
                     WhatsApp Us
                   </Button>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
 
-            <Card className="border border-border shadow-lg">
-              <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-foreground mb-3">Class Timings</h3>
-                <div className="space-y-2 text-sm text-muted-foreground">
-                  <div className="flex justify-between">
-                    <span>Morning Batch</span>
-                    <span className="font-medium text-foreground">6AM – 12PM</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Evening Batch</span>
-                    <span className="font-medium text-foreground">2PM – 8PM</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Test Series</span>
-                    <span className="font-medium text-foreground">Sundays</span>
-                  </div>
+            {/* Class Timings */}
+            <div className="glass-card rounded-2xl p-7 group">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-secondary/20 to-secondary/5 flex items-center justify-center ring-1 ring-secondary/20">
+                  <Clock className="w-5 h-5 text-secondary" />
                 </div>
-              </CardContent>
-            </Card>
+                <h3 className="text-lg font-bold text-foreground">Class Timings</h3>
+              </div>
+              <div className="space-y-3 text-sm">
+                <div className="flex justify-between items-center py-2 border-b border-border/30">
+                  <span className="text-muted-foreground">Morning Batch</span>
+                  <span className="font-semibold text-foreground bg-primary/10 px-3 py-1 rounded-full text-xs">6AM – 12PM</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-border/30">
+                  <span className="text-muted-foreground">Evening Batch</span>
+                  <span className="font-semibold text-foreground bg-primary/10 px-3 py-1 rounded-full text-xs">2PM – 8PM</span>
+                </div>
+                <div className="flex justify-between items-center py-2">
+                  <span className="text-muted-foreground">Test Series</span>
+                  <span className="font-semibold text-foreground bg-secondary/10 px-3 py-1 rounded-full text-xs">Sundays</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

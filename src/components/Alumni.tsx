@@ -1,6 +1,3 @@
-import student1 from "@/assets/isha.png";
-import student2 from "@/assets/durvesh.png";
-import student3 from "@/assets/ajinkyaKher.jpg";
 import nainaMittal from "@/assets/nainaMittal.png";
 import naqiya from "@/assets/naqiya.png";
 import neilChitale from "@/assets/neilChitale.png";
@@ -14,6 +11,7 @@ import ojasvee from "@/assets/ojasvee.png";
 import pranav from "@/assets/pranav.png";
 import saharsh from "@/assets/saharsh.png";
 import { Star } from "lucide-react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 // Swiper imports
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -23,6 +21,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 const Alumni = () => {
+  const { ref: sectionRef, isVisible } = useScrollReveal(0.05);
+
   const testimonials = [
     {
       name: "Ojasvee Vatsa",
@@ -135,88 +135,115 @@ const Alumni = () => {
   ];
 
   return (
-    <section id="alumni" className="py-20 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4 text-foreground">
-            Our Success Stories
+    <section id="alumni" className="relative py-24 overflow-hidden">
+      {/* Section Divider */}
+      <div className="section-divider mb-24" />
+
+      <div ref={sectionRef} className="max-w-6xl mx-auto px-6">
+        {/* Section Header */}
+        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="section-badge mx-auto">
+            <Star className="w-3.5 h-3.5" />
+            Success Stories
+          </div>
+          <h2 className="text-4xl md:text-5xl font-black font-display mb-5">
+            <span className="text-foreground">Our </span>
+            <span className="gradient-text">Success Stories</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Meet our successful alumni who achieved their IIT dreams through our
             comprehensive coaching program.
           </p>
         </div>
 
         {/* Swiper Slider */}
-        <Swiper
-          modules={[ Pagination, Autoplay]}
-          spaceBetween={30}
-          slidesPerView={1}
-          // navigation
-          pagination={{ clickable: true }}
-          autoplay={{ delay: 3000 }}
-          breakpoints={{
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-          }}
-        >
-          {testimonials.map((testimonial, index) => (
-            <SwiperSlide key={index}>
-              <div className="bg-card border border-border rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="flex items-center mb-4">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-16 h-16 rounded-full object-cover mr-4"
-                  />
-                  <div>
-                    <h3 className="text-xl font-semibold text-foreground">
-                      {testimonial.name}
-                    </h3>
-                    <p className="text-primary font-medium">
-                      {testimonial.achievement}
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      Batch {testimonial.year}
-                    </p>
+        <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+             style={{ transitionDelay: '200ms' }}>
+          <Swiper
+            modules={[Pagination, Autoplay]}
+            spaceBetween={24}
+            slidesPerView={1}
+            pagination={{ clickable: true }}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            breakpoints={{
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+          >
+            {testimonials.map((testimonial, index) => (
+              <SwiperSlide key={index}>
+                <div className="glass-card rounded-2xl p-6 group relative overflow-hidden cursor-pointer">
+                  {/* Hover glow */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                  <div className="relative z-10">
+                    <div className="flex items-center mb-4">
+                      {/* Photo with ring */}
+                      <div className="relative mr-4">
+                        <div className="w-16 h-16 rounded-full overflow-hidden ring-2 ring-primary/30 group-hover:ring-primary/60 transition-all duration-300">
+                          <img
+                            src={testimonial.image}
+                            alt={testimonial.name}
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                          />
+                        </div>
+                        {/* Year badge */}
+                        <div className="absolute -bottom-1 -right-1 bg-primary text-[9px] text-white font-bold px-1.5 py-0.5 rounded-full">
+                          {testimonial.year}
+                        </div>
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+                          {testimonial.name}
+                        </h3>
+                        <p className="gradient-text-gold font-bold text-sm">
+                          {testimonial.achievement}
+                        </p>
+                        <p className="text-xs text-muted-foreground mt-0.5">
+                          Batch {testimonial.year}
+                        </p>
+                      </div>
+                    </div>
                   </div>
+
+                  {/* Bottom gradient accent */}
+                  <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-primary/0 via-primary/40 to-secondary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
 
-                {/* <div className="flex mb-3">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="w-5 h-5 fill-yellow-400 text-yellow-400"
-                    />
-                  ))}
-                </div> */}
+        {/* Join Legacy Section */}
+        <div className={`mt-20 relative rounded-2xl overflow-hidden transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+             style={{ transitionDelay: '400ms' }}>
+          {/* Background */}
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-secondary/5 to-primary/10" />
+          <div className="absolute inset-0 glass" />
 
-                {/* <p className="text-muted-foreground leading-relaxed italic">
-                  "{testimonial.review}"
-                </p> */}
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-
-        <div className="mt-16 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-lg p-8 text-center">
-          <h3 className="text-3xl font-bold mb-4 text-foreground">
-            Join Our Success Legacy
-          </h3>
-          <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Be the next success story. Our proven methodology and dedicated
-            faculty are here to guide you towards your IIT JEE success.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 text-sm">
-            <span className="bg-primary text-primary-foreground px-4 py-2 rounded-full">
-              12,500+ Students Trained
-            </span>
-            <span className="bg-secondary text-secondary-foreground px-4 py-2 rounded-full">
-              Top 100 AIR Achievers
-            </span>
-            <span className="bg-primary text-primary-foreground px-4 py-2 rounded-full">
-              25+ Years Legacy
-            </span>
+          <div className="relative z-10 p-10 text-center">
+            <h3 className="text-3xl md:text-4xl font-black font-display mb-4">
+              <span className="text-foreground">Join Our </span>
+              <span className="gradient-text">Success Legacy</span>
+            </h3>
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Be the next success story. Our proven methodology and dedicated
+              faculty are here to guide you towards your IIT JEE success.
+            </p>
+            <div className="flex flex-wrap justify-center gap-3">
+              <span className="inline-flex items-center gap-2 bg-primary/15 border border-primary/20 text-primary px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary/25 transition-colors duration-300 cursor-default">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                12,500+ Students Trained
+              </span>
+              <span className="inline-flex items-center gap-2 bg-secondary/15 border border-secondary/20 text-secondary px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-secondary/25 transition-colors duration-300 cursor-default">
+                <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
+                Top 100 AIR Achievers
+              </span>
+              <span className="inline-flex items-center gap-2 bg-primary/15 border border-primary/20 text-primary px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary/25 transition-colors duration-300 cursor-default">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                25+ Years Legacy
+              </span>
+            </div>
           </div>
         </div>
       </div>
