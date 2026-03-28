@@ -160,7 +160,7 @@ const Contact = () => {
                   <Clock className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                   <div className="text-muted-foreground space-y-0.5">
                     <p>12PM – 8PM</p>
-                    <p>Test Series: Sundays</p>
+                    <p>Test Series: Saturday</p>
                   </div>
                 </div>
               </div>
