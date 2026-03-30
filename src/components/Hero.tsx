@@ -82,7 +82,7 @@ const Hero = () => {
              style={{ animationDelay: '600ms', animationFillMode: 'forwards' }}>
           <div className="glass-card rounded-2xl p-6 group hover:border-primary/40 transition-all duration-500">
             <div className="text-4xl md:text-5xl font-black font-display gradient-text mb-2">
-              <AnimatedCounter end={12500} suffix="+" />
+              <AnimatedCounter end={20000} suffix="+" />
             </div>
             <p className="text-muted-foreground text-sm font-medium tracking-wide uppercase">Students Trained</p>
           </div>
