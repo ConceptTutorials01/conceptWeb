@@ -1,15 +1,13 @@
 import nainaMittal from "@/assets/nainaMittal.png";
-import naqiya from "@/assets/naqiya.png";
-import neilChitale from "@/assets/neilChitale.png";
 import eshita from "@/assets/eshita.png";
 import avi from "@/assets/avi.png";
-import devansh from "@/assets/devansh.png";
-import hiyanshiNeema from "@/assets/hiyanshiNeema.png";
-import ishanShrivastav from "@/assets/ishanShrivastav.png";
 import mdHusain from "@/assets/mdHusain.png";
 import ojasvee from "@/assets/ojasvee.png";
 import pranav from "@/assets/pranav.png";
-import saharsh from "@/assets/saharsh.png";
+import saumya from "@/assets/saumya.png";
+import dreemy from "@/assets/dreemy.png";
+import naqiya from "@/assets/naqiya.png";
+import neilChitale from "@/assets/neilChitale.png";
 import { Star } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
@@ -25,101 +23,128 @@ const Alumni = () => {
 
   const testimonials = [
     {
-      name: "Ojasvee Vatsa",
-      achievement: "JEE MAINS - 99.51",
+      name: "Mohammad Husain",
+      achievement: "99.80 PERCENTILE",
+      image: mdHusain,
+      review:
+        "Concept Tutorials' structured program and excellent faculty guidance were instrumental in my success. The test series perfectly simulated the actual exam environment.",
+      rating: 5,
+      year: "2025",
+    },
+    {
+      name: "Ojasvi Vatsa",
+      achievement: "99.51 PERCENTILE",
       image: ojasvee,
       review:
-        "Concept Tutorials offline classes and personalized attention helped me crack JEE Mains with AIR 32. The faculty's dedication and comprehensive study material were exceptional.",
+        "The personalized attention and doubt-clearing sessions at Concept Tutorials helped me strengthen my weak areas and boost my confidence for JEE.",
+      rating: 5,
+      year: "2025",
+    },
+    {
+      name: "Saumya Talati",
+      achievement: "99.50 PERCENTILE",
+      image: saumya,
+      review:
+        "The study material is top-notch and exactly aligned with the latest pattern. The regular performance analysis helped me track my progress effectively.",
       rating: 5,
       year: "2025",
     },
     {
       name: "Avi Verma",
-      achievement: "JEE MAINS - 99.34",
+      achievement: "99.34 PERCENTILE",
       image: avi,
       review:
-        "The classroom environment and peer learning at Concept Tutorials motivated me throughout my preparation. Got AIR 35 in JEE Mains. Highly recommend their offline coaching.",
+        "Concept Tutorials provided a highly competitive yet supportive environment. The teachers' unique problem-solving techniques saved me a lot of time during the exam.",
+      rating: 5,
+      year: "2025",
+    },
+    {
+      name: "Eshita Bhatiya",
+      achievement: "99.34 PERCENTILE",
+      image: eshita,
+      review:
+        "The mock tests were an eye-opener. The detailed solutions and faculty discussions after every test helped me avoid silly mistakes in the final exam.",
       rating: 5,
       year: "2025",
     },
     {
       name: "Pranav Adkar",
-      achievement: "JEE MAINS - 99.20",
+      achievement: "99.20 PERCENTILE",
       image: pranav,
       review:
-        "Thanks to Concept Tutorials structured approach and regular mock tests, I got selected as Pilot in Indian Air Force through NDA. The teachers were always available for doubt clearing sessions.",
+        "I joined Concept Tutorials for their renowned faculty, and they exceeded my expectations. Their focus on concept clarity rather than rote learning made all the difference.",
       rating: 5,
       year: "2025",
     },
     {
-      name: "Devansh Parmar",
-      achievement: "JEE MAINS - 98.87",
-      image: devansh,
+      name: "Dreemy Jain",
+      achievement: "99.20 PERCENTILE",
+      image: dreemy,
       review:
-        "Thanks to Concept Tutorials structured approach and regular mock tests, I got selected as Pilot in Indian Air Force through NDA. The teachers were always available for doubt clearing sessions.",
+        "The constant motivation from the teachers kept me going during stressful times. The DPPS (Daily Practice Problems) were carefully curated to cover all difficulty levels.",
       rating: 5,
       year: "2025",
     },
     {
-      name: "Mohammad Husain",
-      achievement: "JEE MAINS - 98.7%",
-      image: mdHusain,
+      name: "Naina Mittal",
+      achievement: "99.00 PERCENTILE",
+      image: nainaMittal,
       review:
-        "Thanks to Concept Tutorials structured approach and regular mock tests, I got selected as Pilot in Indian Air Force through NDA. The teachers were always available for doubt clearing sessions.",
+        "The systematic curriculum at Concept Tutorials ensured that I completed the syllabus well in time for multiple revisions. Truly the best institute for JEE preparation.",
       rating: 5,
       year: "2025",
     },
     {
-      name: "Saharsh Pawshe",
-      achievement: "JEE MAINS - 98.22%",
-      image: saharsh,
+      name: "Pranav Adkar",
+      achievement: "IIT DELHI",
+      image: pranav,
       review:
-        "Thanks to Concept Tutorials structured approach and regular mock tests, I got selected as Pilot in Indian Air Force through NDA. The teachers were always available for doubt clearing sessions.",
+        "Securing a seat at IIT Delhi was my dream, and the continuous support from the faculty made it a reality.",
       rating: 5,
-      year: "2025",
-    },
-    {
-      name: "Ishan Shrivastav",
-      achievement: "JEE MAINS - 98.2%",
-      image: ishanShrivastav,
-      review:
-        "Thanks to Concept Tutorials structured approach and regular mock tests, I got selected as Pilot in Indian Air Force through NDA. The teachers were always available for doubt clearing sessions.",
-      rating: 5,
-      year: "2025",
-    },
-    {
-      name: "Hiyanshi Neema",
-      achievement: "JEE MAINS - 98.1%",
-      image: hiyanshiNeema,
-      review:
-        "Thanks to Concept Tutorials structured approach and regular mock tests, I got selected as Pilot in Indian Air Force through NDA. The teachers were always available for doubt clearing sessions.",
-      rating: 5,
-      year: "2025",
+      year: "2024",
     },
     {
       name: "Naina Mittal",
       achievement: "IIT DELHI",
       image: nainaMittal,
       review:
-        "Thanks to Concept Tutorials structured approach and regular mock tests, I got selected as Pilot in Indian Air Force through NDA. The teachers were always available for doubt clearing sessions.",
+        "The rigorous training and mentorship at Concept Tutorials laid the foundation for my success at IIT Delhi.",
       rating: 5,
       year: "2024",
     },
     {
-      name: "Eshita Bhati",
-      achievement: "IIT ROORKE",
-      image: eshita,
+      name: "Ojasvi Vatsa",
+      achievement: "IIT PATNA",
+      image: ojasvee,
       review:
-        "Thanks to Concept Tutorials structured approach and regular mock tests, I got selected as Pilot in Indian Air Force through NDA. The teachers were always available for doubt clearing sessions.",
+        "Concept Tutorials provided the exact competitive environment I needed. Proud to be at IIT Patna!",
       rating: 5,
       year: "2024",
     },
     {
-      name: "Neil Chitale",
+      name: "Neil Chitle",
       achievement: "IIT BHILAI",
       image: neilChitale,
       review:
-        "Thanks to Concept Tutorials structured approach and regular mock tests, I got selected as Pilot in Indian Air Force through NDA. The teachers were always available for doubt clearing sessions.",
+        "The doubt-solving sessions were incredibly helpful. They helped me achieve my goal of entering IIT Bhilai.",
+      rating: 5,
+      year: "2024",
+    },
+    {
+      name: "Eshita Bhatia",
+      achievement: "IIT ROORKEE",
+      image: eshita,
+      review:
+        "Consistency and the right guidance from Concept Tutorials led me straight to IIT Roorkee.",
+      rating: 5,
+      year: "2024",
+    },
+    {
+      name: "Dreemy Jain",
+      achievement: "IIT GANDHINAGAR",
+      image: dreemy,
+      review:
+        "The personalized attention here was unmatched. Thrilled to start my journey at IIT Gandhinagar.",
       rating: 5,
       year: "2024",
     },
@@ -128,7 +153,16 @@ const Alumni = () => {
       achievement: "NIT TRICHY",
       image: naqiya,
       review:
-        "Thanks to Concept Tutorials structured approach and regular mock tests, I got selected as Pilot in Indian Air Force through NDA. The teachers were always available for doubt clearing sessions.",
+        "Thanks to the excellent study material and mock tests, I secured admission at NIT Trichy.",
+      rating: 5,
+      year: "2024",
+    },
+    {
+      name: "Avi Verma",
+      achievement: "NIT JAIPUR",
+      image: avi,
+      review:
+        "The focused curriculum and amazing teachers helped me grab a seat at NIT Jaipur. Highly recommended!",
       rating: 5,
       year: "2024",
     }
