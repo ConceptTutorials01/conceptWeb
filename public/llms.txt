@@ -57,10 +57,10 @@
 - Avi Verma: 99.34 percentile, AIR 35
 - Pranav Adkar: 99.20 percentile
 - Devansh Parmar: 98.87 percentile
-- Mohammad Husain: 98.7 percentile
+- Mohammad Husain: 99.80 percentile
 - Saharsh Pawshe: 98.22 percentile
-- Ishan Shrivastav: 98.2 percentile
-- Hiyanshi Neema: 98.1 percentile
+- Ishan Shrivastav: 98.20 percentile
+- Hiyanshi Neema: 98.10 percentile
 
 ### 2024 Batch — IIT/NIT Admissions
 - Naina Mittal: IIT Delhi
