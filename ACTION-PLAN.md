@@ -255,7 +255,7 @@ Hours: Mon–Sat 6AM–8PM (Morning: 6AM–12PM, Evening: 2PM–8PM), Test Serie
 - Avi Verma: JEE Mains 99.34 percentile, AIR 35
 - Pranav Adkar: JEE Mains 99.20 percentile
 - Devansh Parmar: JEE Mains 98.87 percentile
-- Mohammad Husain: JEE Mains 98.7 percentile
+- Mohammad Husain: JEE Mains 99.8 percentile
 
 ## Results (2024 Batch)
 - Naina Mittal: IIT Delhi
