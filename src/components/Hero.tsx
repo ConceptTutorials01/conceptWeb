@@ -43,7 +43,7 @@ const Hero = () => {
 
         {/* Main Heading */}
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-black font-display mb-6 leading-[1.1] animate-fade-up"
-            style={{ animationDelay: '150ms' }}>
+          style={{ animationDelay: '150ms' }}>
           <span className="text-foreground">Achieve Your </span>
           <span className="gradient-text-gold animate-text-glow inline-block">IIT JEE</span>
           <br />
@@ -52,14 +52,13 @@ const Hero = () => {
 
         {/* Subtitle */}
         <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed animate-fade-up opacity-0"
-           style={{ animationDelay: '300ms', animationFillMode: 'forwards' }}>
-          Join Indore's premier offline coaching institute with proven results, expert faculty,
-          and comprehensive preparation for IIT JEE Main & Advanced.
+          style={{ animationDelay: '300ms', animationFillMode: 'forwards' }}>
+          Join Indore's premier offline coaching institute with proven results, We don't just teach syllabus — we build the conceptual clarity that turns average students into top rankers.
         </p>
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-up opacity-0"
-             style={{ animationDelay: '450ms', animationFillMode: 'forwards' }}>
+          style={{ animationDelay: '450ms', animationFillMode: 'forwards' }}>
           <Button
             size="lg"
             onClick={scrollToContact}
@@ -79,7 +78,7 @@ const Hero = () => {
 
         {/* Stats */}
         <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto animate-fade-up opacity-0"
-             style={{ animationDelay: '600ms', animationFillMode: 'forwards' }}>
+          style={{ animationDelay: '600ms', animationFillMode: 'forwards' }}>
           <div className="glass-card rounded-2xl p-6 group hover:border-primary/40 transition-all duration-500">
             <div className="text-4xl md:text-5xl font-black font-display gradient-text mb-2">
               <AnimatedCounter end={20000} suffix="+" />

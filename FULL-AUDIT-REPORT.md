@@ -252,7 +252,7 @@ This text is:
 
 ### Heading Structure
 
-- **H1:** "Achieve Your IIT JEE Dreams" — Present but vague; better: "IIT JEE Coaching in Indore — Concept Tutorials"
+- **H1:** "Clear Concepts. Real Results. Your JEE & NEET Journey Starts Here." — Present but vague; better: "IIT JEE Coaching in Indore — Concept Tutorials"
 - **H2:** Appropriate on each section (About, Alumni, Facilities, Contact)
 - **H3:** Present in cards
 
