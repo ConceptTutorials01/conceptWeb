@@ -6,8 +6,9 @@ const NewBranchPopup = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsOpen(true), 800);
-    return () => clearTimeout(timer);
+    // Popup paused for now
+    // const timer = setTimeout(() => setIsOpen(true), 800);
+    // return () => clearTimeout(timer);
   }, []);
 
   if (!isOpen) return null;
