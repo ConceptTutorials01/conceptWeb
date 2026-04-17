@@ -102,8 +102,15 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
+          {/* CTA Buttons */}
+          <div className="hidden md:flex items-center space-x-3">
+            <Button
+              variant="outline"
+              onClick={() => window.location.href = import.meta.env.VITE_LOGIN_URL}
+              className="border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300 font-semibold px-6"
+            >
+              Log In
+            </Button>
             <Button
               onClick={() => scrollToSection('#admissions')}
               className="bg-gradient-to-r from-primary to-blue-500 hover:from-primary/90 hover:to-blue-500/90 text-white shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:scale-105 transition-all duration-300 font-semibold px-6"
@@ -148,12 +155,30 @@ const Header = () => {
                 {item.name}
               </button>
             ))}
+<<<<<<< HEAD
             <Button
               className="w-full mt-3 bg-gradient-to-r from-primary to-blue-500 text-white font-semibold"
               onClick={() => scrollToSection('#admissions')}
             >
               Enroll Now
             </Button>
+=======
+            <div className="grid grid-cols-2 gap-3 mt-3">
+              <Button
+                variant="outline"
+                className="w-full border-primary/20 text-foreground font-semibold"
+                onClick={() => window.location.href = import.meta.env.VITE_LOGIN_URL}
+              >
+                Log In
+              </Button>
+              <Button
+                className="w-full bg-gradient-to-r from-primary to-blue-500 text-white font-semibold"
+                onClick={() => scrollToSection('#contact')}
+              >
+                Enroll Now
+              </Button>
+            </div>
+>>>>>>> 57f5be485ed5fe33f77f2143d2b0c3ba3ae03257
           </nav>
         </div>
       </div>
