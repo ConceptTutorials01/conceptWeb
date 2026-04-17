@@ -4,7 +4,9 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Alumni from "@/components/Alumni";
+import Class10Results from "@/components/Class10Results";
 import Facilities from "@/components/Facilities";
+import Admissions from "@/components/Admissions";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import NewBranchPopup from "@/components/NewBranchPopup";
@@ -25,7 +27,9 @@ const Index = () => {
         <Hero />
         <About />
         <Alumni />
+        <Class10Results />
         <Facilities />
+        <Admissions />
         <Contact />
         <Footer />
       </div>

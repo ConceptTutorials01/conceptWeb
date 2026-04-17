@@ -38,23 +38,22 @@ const Hero = () => {
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-8 animate-fade-up">
           <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-          Indore's Premier IIT JEE Coaching
+          Indore's Most Trusted Offline Coaching Since 1994
         </div>
 
         {/* Main Heading */}
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-black font-display mb-6 leading-[1.1] animate-fade-up"
             style={{ animationDelay: '150ms' }}>
-          <span className="text-foreground">Achieve Your </span>
-          <span className="gradient-text-gold animate-text-glow inline-block">IIT JEE</span>
+          <span className="text-foreground">Crack </span>
+          <span className="gradient-text-gold animate-text-glow inline-block">IIT JEE & NEET</span>
           <br />
-          <span className="text-foreground">Dreams</span>
+          <span className="text-foreground">With Conceptual Clarity</span>
         </h1>
 
         {/* Subtitle */}
         <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed animate-fade-up opacity-0"
            style={{ animationDelay: '300ms', animationFillMode: 'forwards' }}>
-          Join Indore's premier offline coaching institute with proven results, expert faculty,
-          and comprehensive preparation for IIT JEE Main & Advanced.
+          We don't just cover the syllabus — we build the deep conceptual foundation that transforms average students into top rankers. Whether your goal is IIT JEE or NEET, our proven approach has delivered results for 30+ years.
         </p>
 
         {/* Buttons */}

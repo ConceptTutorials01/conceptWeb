@@ -13,6 +13,7 @@ const Header = () => {
     { name: 'About', href: '#about' },
     { name: 'Alumni', href: '#alumni' },
     { name: 'Facilities', href: '#facilities' },
+    { name: 'Admissions', href: '#admissions' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -21,7 +22,7 @@ const Header = () => {
       setScrolled(window.scrollY > 20);
 
       // Determine active section
-      const sections = ['contact', 'facilities', 'alumni', 'about'];
+      const sections = ['contact', 'admissions', 'facilities', 'alumni', 'about'];
       let current = 'home';
       for (const section of sections) {
         const el = document.getElementById(section);
@@ -104,7 +105,7 @@ const Header = () => {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Button
-              onClick={() => scrollToSection('#contact')}
+              onClick={() => scrollToSection('#admissions')}
               className="bg-gradient-to-r from-primary to-blue-500 hover:from-primary/90 hover:to-blue-500/90 text-white shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:scale-105 transition-all duration-300 font-semibold px-6"
             >
               <span className="relative z-10">Enroll Now</span>
@@ -149,7 +150,7 @@ const Header = () => {
             ))}
             <Button
               className="w-full mt-3 bg-gradient-to-r from-primary to-blue-500 text-white font-semibold"
-              onClick={() => scrollToSection('#contact')}
+              onClick={() => scrollToSection('#admissions')}
             >
               Enroll Now
             </Button>
