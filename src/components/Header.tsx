@@ -42,7 +42,12 @@ const Header = () => {
     if (href === '#') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
-      document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+      const el = document.querySelector(href);
+      if (el) {
+        const offset = 80;
+        const top = el.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
     }
     setIsMenuOpen(false);
   };
