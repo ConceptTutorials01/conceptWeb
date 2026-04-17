@@ -155,14 +155,6 @@ const Header = () => {
                 {item.name}
               </button>
             ))}
-<<<<<<< HEAD
-            <Button
-              className="w-full mt-3 bg-gradient-to-r from-primary to-blue-500 text-white font-semibold"
-              onClick={() => scrollToSection('#admissions')}
-            >
-              Enroll Now
-            </Button>
-=======
             <div className="grid grid-cols-2 gap-3 mt-3">
               <Button
                 variant="outline"
@@ -173,12 +165,11 @@ const Header = () => {
               </Button>
               <Button
                 className="w-full bg-gradient-to-r from-primary to-blue-500 text-white font-semibold"
-                onClick={() => scrollToSection('#contact')}
+                onClick={() => scrollToSection('#admissions')}
               >
                 Enroll Now
               </Button>
             </div>
->>>>>>> 57f5be485ed5fe33f77f2143d2b0c3ba3ae03257
           </nav>
         </div>
       </div>

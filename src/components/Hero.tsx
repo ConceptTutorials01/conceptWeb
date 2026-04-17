@@ -43,28 +43,17 @@ const Hero = () => {
 
         {/* Main Heading */}
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-black font-display mb-6 leading-[1.1] animate-fade-up"
-<<<<<<< HEAD
             style={{ animationDelay: '150ms' }}>
           <span className="text-foreground">Crack </span>
           <span className="gradient-text-gold animate-text-glow inline-block">IIT JEE & NEET</span>
-=======
-          style={{ animationDelay: '150ms' }}>
-          <span className="text-foreground">Achieve Your </span>
-          <span className="gradient-text-gold animate-text-glow inline-block">IIT JEE</span>
->>>>>>> 57f5be485ed5fe33f77f2143d2b0c3ba3ae03257
           <br />
           <span className="text-foreground">With Conceptual Clarity</span>
         </h1>
 
         {/* Subtitle */}
         <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed animate-fade-up opacity-0"
-<<<<<<< HEAD
            style={{ animationDelay: '300ms', animationFillMode: 'forwards' }}>
           We don't just cover the syllabus — we build the deep conceptual foundation that transforms average students into top rankers. Whether your goal is IIT JEE or NEET, our proven approach has delivered results for 30+ years.
-=======
-          style={{ animationDelay: '300ms', animationFillMode: 'forwards' }}>
-          Join Indore's premier offline coaching institute with proven results, We don't just teach syllabus — we build the conceptual clarity that turns average students into top rankers.
->>>>>>> 57f5be485ed5fe33f77f2143d2b0c3ba3ae03257
         </p>
 
         {/* Buttons */}
