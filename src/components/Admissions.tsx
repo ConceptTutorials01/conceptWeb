@@ -2,8 +2,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { GraduationCap, MessageCircle, FileText, PlayCircle, Phone, Info, CheckCircle2, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import emailjs from "emailjs-com";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
@@ -24,6 +25,15 @@ const Admissions = () => {
 
   const [otherCourse, setOtherCourse] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handleOpenVideo = () => setIsVideoOpen(true);
+  const handleCloseVideo = () => {
+    videoRef.current?.pause();
+    if (videoRef.current) videoRef.current.currentTime = 0;
+    setIsVideoOpen(false);
+  };
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -245,10 +255,52 @@ Please get back to me. Thank you!`;
               </div>
               <Button variant="outline"
                 className="w-full border-secondary/20 text-secondary hover:bg-secondary/10 hover:border-secondary/40 text-sm rounded-xl transition-all duration-300"
-                onClick={() => window.open("#", "_blank")}>
+                onClick={handleOpenVideo}>
+                <PlayCircle className="w-4 h-4 mr-2" />
                 Watch Now
               </Button>
             </div>
+
+            {/* Video Modal */}
+            <Dialog open={isVideoOpen} onOpenChange={(open) => { if (!open) handleCloseVideo(); }}>
+              <DialogContent className="max-w-3xl w-full p-0 overflow-hidden rounded-2xl border border-secondary/20 bg-black shadow-2xl shadow-black/60">
+                {/* Custom close button */}
+                <button
+                  onClick={handleCloseVideo}
+                  className="absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-black/60 hover:bg-black/90 flex items-center justify-center text-white transition-colors duration-200"
+                  aria-label="Close video"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+
+                {/* Video header */}
+                <div className="px-5 pt-5 pb-3 bg-gradient-to-b from-[#0a0e1a] to-black">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-secondary/30 to-secondary/10 flex items-center justify-center ring-1 ring-secondary/30">
+                      <PlayCircle className="w-4 h-4 text-secondary" />
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-bold text-white">Demo Lecture</h4>
+                      <p className="text-xs text-white/50">Concept Tutorials — by Parag Kher Sir</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Video player */}
+                <div className="relative w-full bg-black">
+                  <video
+                    ref={videoRef}
+                    src="/demo-lecture.mp4"
+                    controls
+                    autoPlay
+                    className="w-full max-h-[65vh] outline-none"
+                    style={{ display: 'block' }}
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </DialogContent>
+            </Dialog>
 
             {/* Call */}
             <div className="relative rounded-2xl overflow-hidden">
