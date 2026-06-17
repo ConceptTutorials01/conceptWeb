@@ -149,7 +149,7 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="border-t border-border/30 mt-14 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground/70 mb-4 md:mb-0">
-            © 2025 Concept Tutorials. All rights reserved.
+            © 2026 Concept Tutorials. All rights reserved.
           </p>
           <div className="flex space-x-6 text-sm text-muted-foreground/70">
             <a href="#" className="hover:text-primary transition-colors duration-300">Privacy Policy</a>

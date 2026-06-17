@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Alumni from "@/components/Alumni";
+import JEEResults2026 from "@/components/JEEResults2026";
 import Class10Results from "@/components/Class10Results";
 import Facilities from "@/components/Facilities";
 import Admissions from "@/components/Admissions";
@@ -26,6 +27,7 @@ const Index = () => {
         <Header />
         <Hero />
         <About />
+        <JEEResults2026 />
         <Alumni />
         <Class10Results />
         <Facilities />

@@ -1,13 +1,15 @@
 import nainaMittal from "@/assets/nainaMittal.png";
 import eshita from "@/assets/eshita.png";
 import avi from "@/assets/avi.png";
-import mdHusain from "@/assets/mdHusain.png";
+import mdHusain from "@/assets/MOHAMMAD HUSAIN - 99.88 Percentile.png";
 import ojasvee from "@/assets/ojasvee.png";
 import pranav from "@/assets/pranav.png";
 import saumya from "@/assets/SAUMYA TALATI - 99.50 Percentile.png";
 import dreemy from "@/assets/DREEMY JAIN - 99.20 Percentile.png";
 import naqiya from "@/assets/naqiya.png";
 import neilChitale from "@/assets/neilChitale.png";
+import grishaGargAdv from "@/assets/grisha_garg_adv.png";
+import aakratiJainAdv from "@/assets/aakrati_jain_adv.png";
 import { Star } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
@@ -24,75 +26,93 @@ const Alumni = () => {
   const testimonials = [
     {
       name: "Mohammad Husain",
-      achievement: "99.80 PERCENTILE",
+      achievement: "IIT Patna CSE (AIR 3068) | 99.88%ile",
       image: mdHusain,
       review:
         "Concept Tutorials' structured program and excellent faculty guidance were instrumental in my success. The test series perfectly simulated the actual exam environment.",
       rating: 5,
-      year: "2025",
+      year: "2026",
+    },
+    {
+      name: "Grisha Garg",
+      achievement: "IIT Patna AI (AIR 9393)",
+      image: grishaGargAdv,
+      review:
+        "Preparing at Concept Tutorials was a game-changer. The rigorous test series and personal mentorship from Parag Kher Sir helped me crack JEE Advanced.",
+      rating: 5,
+      year: "2026",
+    },
+    {
+      name: "Aakrati Jain",
+      achievement: "IIT Patna Material Science",
+      image: aakratiJainAdv,
+      review:
+        "The small batch sizes and personal attention at Concept Tutorials allowed me to clarify my doubts instantly. Getting admitted to IIT Patna is a dream come true!",
+      rating: 5,
+      year: "2026",
     },
     {
       name: "Ojasvi Vatsa",
-      achievement: "99.51 PERCENTILE",
+      achievement: "99.78 PERCENTILE",
       image: ojasvee,
       review:
         "The personalized attention and doubt-clearing sessions at Concept Tutorials helped me strengthen my weak areas and boost my confidence for JEE.",
       rating: 5,
-      year: "2025",
+      year: "2026",
     },
     {
       name: "Saumya Talati",
-      achievement: "99.50 PERCENTILE",
+      achievement: "99.65 PERCENTILE",
       image: saumya,
       review:
         "The study material is top-notch and exactly aligned with the latest pattern. The regular performance analysis helped me track my progress effectively.",
       rating: 5,
-      year: "2025",
+      year: "2026",
     },
     {
       name: "Avi Verma",
-      achievement: "99.34 PERCENTILE",
+      achievement: "99.52 PERCENTILE",
       image: avi,
       review:
         "Concept Tutorials provided a highly competitive yet supportive environment. The teachers' unique problem-solving techniques saved me a lot of time during the exam.",
       rating: 5,
-      year: "2025",
+      year: "2026",
     },
     {
       name: "Eshita Bhatiya",
-      achievement: "99.34 PERCENTILE",
+      achievement: "99.40 PERCENTILE",
       image: eshita,
       review:
         "The mock tests were an eye-opener. The detailed solutions and faculty discussions after every test helped me avoid silly mistakes in the final exam.",
       rating: 5,
-      year: "2025",
+      year: "2026",
     },
     {
       name: "Pranav Adkar",
-      achievement: "99.20 PERCENTILE",
+      achievement: "99.28 PERCENTILE",
       image: pranav,
       review:
         "I joined Concept Tutorials for their renowned faculty, and they exceeded my expectations. Their focus on concept clarity rather than rote learning made all the difference.",
       rating: 5,
-      year: "2025",
+      year: "2026",
     },
     {
       name: "Dreemy Jain",
-      achievement: "99.20 PERCENTILE",
+      achievement: "99.15 PERCENTILE",
       image: dreemy,
       review:
         "The constant motivation from the teachers kept me going during stressful times. The DPPS (Daily Practice Problems) were carefully curated to cover all difficulty levels.",
       rating: 5,
-      year: "2025",
+      year: "2026",
     },
     {
       name: "Naina Mittal",
-      achievement: "99.00 PERCENTILE",
+      achievement: "99.02 PERCENTILE",
       image: nainaMittal,
       review:
         "The systematic curriculum at Concept Tutorials ensured that I completed the syllabus well in time for multiple revisions. Truly the best institute for JEE preparation.",
       rating: 5,
-      year: "2025",
+      year: "2026",
     },
     {
       name: "Pranav Adkar",
@@ -267,7 +287,7 @@ const Alumni = () => {
             <div className="flex flex-wrap justify-center gap-3">
               <span className="inline-flex items-center gap-2 bg-primary/15 border border-primary/20 text-primary px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary/25 transition-colors duration-300 cursor-default">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                12,500+ Students Trained
+                20,000+ Students Trained
               </span>
               <span className="inline-flex items-center gap-2 bg-secondary/15 border border-secondary/20 text-secondary px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-secondary/25 transition-colors duration-300 cursor-default">
                 <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
